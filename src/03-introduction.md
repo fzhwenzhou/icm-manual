@@ -16,8 +16,11 @@ A component is called a *combinator* if it has a type and one or more ports. A c
 
 An *ICM processor* is a type of processor that includes one or more Redex Execution Units. It can also optionally have other controllers.
 
+An *accelerator* is a type of processor that is not a part of an ICM processor. It is usually a non-programmable fixed-function unit or a core that can operate autonomously but is specialized for certain tasks.
+
 ## 1.2 ICM Software Execution Environments
 An ICM program is usually a program written in functional-programming languages that are compiled into ICM combinators. The behavior of an ICM program depends on the executing environment it runs on. On each executing environments, ICM programs are expected to perform specific behaviors. Examples of the running environment includes the following:
+
 - "Bare metal" hardware platforms. The programs directly run on an ICM hardware platform without runtime interception or operating systems. Therefore, the program itself should take care of all resource management, I/O management, and handle all the exceptions. The programs can utilize all the resources the hardware has and are the most efficient ones. 
 - ICM operating systems. The programs run on a managed environment by operating systems. The program itself does not need to worry about resources and exceptions; instead, the operating system will allocate sufficient amount of resources and handle exceptions for it. 
 - ICM emulators. The programs run on an ICM emulator, which is usually on a traditional architecture. Therefore, some features of traditional architectures can be used as dense combinators or I/O combinators to achieve the best performance. ICM emulators will yield the worst performance among the three, so it should only be used for experimental purposes. 
