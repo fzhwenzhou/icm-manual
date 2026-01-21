@@ -10,15 +10,14 @@ The document contains the following versions of the ICM modules:
 
 |  Base | Version |  Status  |
 |:-----:|:-------:|:--------:|
-| ICM32 |   0.1   |   Draft  |
-| ICM64 |   0.0   | Planning |
-| ICM16 |   0.0   | Planning |
+| Redex |  0.1    |  Draft   |
+| Combinators | 0.1| Draft   |
+| Formats     | 0.1 | Draft  |
 
-| Extension | Version |  Status  |
+|   Dense   | Version |  Status  |
 |:---------:|:-------:|:--------:|
-|     I     |   0.1   |   Draft  |
-|     M     |   0.0   | Planning |
-|     F     |   0.0   | Planning |
+|     M     |   0.1   |   Draft  |
+|     F     |   0.1   |  Draft   |
 |     V     |   0.0   | Planning |
 |     Ma    |   0.0   | Planning |
 

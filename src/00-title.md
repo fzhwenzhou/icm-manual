@@ -1,6 +1,6 @@
 ---
 documentclass: scrartcl
-title: The ICM Machine Manual
+title: The ICM Manual
 author: Ye Jiahong, Fang Zihao
 ---
 \newpage
