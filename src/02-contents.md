@@ -16,62 +16,43 @@
 
     1.6 UNSPECIFIED Behaviors
 
-**2 Redex Execution Unit**
+**2 Terminology**
 
-    2.1 Basic Layout
+**3 Redex Execution Unit**
 
-    2.2 Variants
+    3.1 Basic Layout
 
-**3 Combinators**
+    3.2 Variants
 
-    3.1 Core Combinators
+**4 Combinators**
 
-    3.2 Numerical Combinators
+    4.1 Core Combinators
 
-    3.3 Control Combinators
+    4.2 Numerical Combinators
 
-    3.4 Bookkeeping Combinators
+    4.3 Control Combinators
 
-    3.5 Dense Combinators
+    4.4 Bookkeeping Combinators
 
-    3.6 I/O Combinators
+    4.5 Dense Combinators
+
+    4.6 I/O Combinators
         
-        3.6.1 REF Type
+        4.6.1 General I/O Combinators
+
+        4.6.2 REF Type
         
-        3.6.2 DREF Type
-**4 Data Formats**
+        4.6.3 DREF Type
 
-    4.1 Integer Numbers
+**5 Data Formats**
 
-    4.2 Floating Point Numbers
+    5.1 Integer Numbers
 
-    4.3 Small Vectors
+    5.2 Floating Point Numbers
 
-    4.4 Small Matrices
+    5.3 Small Vectors
 
-**5 Standard Dense Modules**
-
-    5.1 M - Integer Multiplication Module
-
-    5.2 F - Floating Point Module
-        
-        5.2.1 F32 - IEEE 754 32-bit Floating Point
-
-        5.2.2 F64 - IEEE 754 64-bit Floating Point
-
-        5.2.3 F16 - IEEE 754 16-bit Floating Point
-
-    5.3 V - Vector Module
-
-        5.3.1 Vs - Small Vectors
-
-        5.3.2 Vl - Large Vectors
-
-    5.4 Ma - Matrix Module
-
-        5.4.1 Mas - Small Matrices
-
-        5.4.2 Mal - Large Matrices
+    5.4 Small Matrices
 
 **6 Standard Types**
 
@@ -83,9 +64,7 @@
 
     6.4 Coprocessor Type
 
-**Appendix I Metadata Table**
-
-**Appendix II Naming Standard**
+**Appendix I Naming Standard**
 
 **Bibliography**
 \newpage

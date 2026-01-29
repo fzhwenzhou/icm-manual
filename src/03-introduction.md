@@ -36,5 +36,5 @@ This part is still under investigation.
 *Placeholder*
 
 ## 1.6 UNSPECIFIED Behaviors
-The architecture fully describes how the ICM architecture should be implemented or what constrains should the implementers follow. In case that there are something not specified in this specification, they are called "UNSPECIFIED Behaviors" and implementers are free to determine how it should work. 
+The architecture fully describes how the ICM architecture should be implemented or what constrains should the implementers follow. In case that there are something not specified in this specification, they are called "UNSPECIFIED Behaviors" and implementers are free to determine how it should work. If the term "UNSPECIFIED" is used, it means that this part is left unspecified on purpose.
 \newpage

@@ -1,4 +1,4 @@
-## Chapter 2
+## Chapter 3
 # Redex Execution Unit
 Redex Execution Units are the basic execution units for ICM architecture. Any ICM processor, regardless of its type, should have at least one Redex Execution Unit. 
 
@@ -6,7 +6,7 @@ A Redex Execution Unit should have the following components: Redex Registers, SR
 
 Only the register layout is defined in the following contents. The register length is defined by a constant `XLEN`, which is commonly 16, 32, or 64 (Other numbers like 8 and 128 can also be used but not common). To identify an architecture with a specific `XLEN`, one can add the length after ICM like ICM16, ICM32, or ICM64. Others, including the number of registers in a single unit, the SRAM size, and the number of lanes for a communicator, are all up to the implementers as they are handled by the micro-architecture, and does not affect the programs. It is up to the implementer whether to use ring-based, matrix-based, matrix-based with diagonal, or even cube-based communication lanes.
 
-## 2.1 Basic Register Layout
+## 3.1 Basic Register Layout
 The basic register layout is as follows, representing a common three-port register:
 ```
 XLEN-1           0
@@ -21,19 +21,19 @@ Sometimes the combinator only has a single main port and no auxiliary port (for 
 ```
 XLEN-1           0
 |   Metadata     |
-|   Main Port    |
+|   Principal Port    |
 |    Reserved    |
 |    Reserved    |
 ```
 
-## 2.2 Variants
+## 3.2 Variants
 The basic register layout can fully represent the core combinators. However, it is far inefficient for most of the combinators and extensions, especially for those storing data. Also, it will sometimes cause the resource waste. The following variants can be implemented by implementers if needed.
 
 The first variant is for erasers. Since keeping the reserved zones in the architecture may waste the hardware resources, implementers can define some registers as two-element pairs. These pairs only have Metadata and Main Port zones, therefore cutting the size of registers needed into half. Like the standard registers, the number of these "compressed" registers are also not specified, so it is up to the implementer whether to put these compressed registers into Redex Execution Units and how many. The format is as follows:
 ```
 XLEN-1           0
 |   Metadata     |
-|   Main Port    |
+|   Principal Port    |
 ```
 The next variant is for storing data including numbers and vectors. Since the Auxiliary Ports are not used for data combinators (as they only have Main Ports), these parts can be used to store data. The maximum length of data a single register can store is `XLEN * 2` bits. The `XLEN-1` position of the second data register should directly follow the `0` position of the first data register to combine them into a larger register. For example, 32-bit ICM can store and process at most 64-bit integers and floating point numbers if not using extensions and other data structures. 
 
@@ -42,7 +42,7 @@ Any data should start at the `XLEN-1` position of the first data register, regar
 ```
 XLEN-1           0
 |   Metadata     |
-|   Main Port    |
+|   Principal Port    |
 |      Data      |
 |      Data      |
 ```
@@ -52,12 +52,12 @@ Some operations (for example, fused-multiply-add) may have more than two operand
 ```
 XLEN-1           0
 |   Metadata     |
-|   Main Port    |
+|   Principal Port    |
 | Auxiliary Port |
 | Auxiliary Port |
 | Auxiliary Port |
 ```
 
-Similarly, more Auxiliary Ports can be added. One can also extend the data section of the data combinators in the same way. These are all implementation defined, and can vary between different implementers. However, ICM standard only ensures that three Auxiliary Ports should work in the architecture. Other types are not ensured by the standard, and they should ensure their own compilers and operating systems can handle these conditions well.
+Similarly, more Auxiliary Ports can be added. One can also extend the data section of the data combinators in the same way. These are all implementation defined, and can vary between different implementers. However, ICM standard only ensures that zero or two Auxiliary Ports should work in the architecture. Other types are not ensured by the standard, and they should ensure their own compilers and operating systems can handle these conditions well.
 
 \newpage
